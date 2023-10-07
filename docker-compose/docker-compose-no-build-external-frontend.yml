@@ -29,19 +29,18 @@ services:
     env_file:
       - ./envs/common-blockscout.env
     environment:
-      ETHEREUM_JSONRPC_VARIANT: "ganache"
+      ETHEREUM_JSONRPC_VARIANT: "geth"
       ETHEREUM_JSONRPC_HTTP_URL: https://zkevm-rpc.com
       ETHEREUM_JSONRPC_TRACE_URL: https://zkevm-rpc.com
-      ETHEREUM_JSONRPC_WS_URL: ws:////zkevm-rpc.com
+      # ETHEREUM_JSONRPC_WS_URL: ws:////zkevm-rpc.com
       INDEXER_DISABLE_INTERNAL_TRANSACTIONS_FETCHER: "true"
       INDEXER_DISABLE_PENDING_TRANSACTIONS_FETCHER: "true"
       DATABASE_URL: postgresql://postgres:@host.docker.internal:7432/blockscout?ssl=false
       ECTO_USE_SSL: "false"
-      SECRET_KEY_BASE: "56NtB48ear7+wMSf0IQuWDAAazhpb31qyc7GiyspBP2vh7t5zlCsF5QDv76chXeN"
+      # SECRET_KEY_BASE: "56NtB48ear7+wMSf0IQuWDAAazhpb31qyc7GiyspBP2vh7t5zlCsF5QDv76chXeN"
       CHAIN_ID: "1101"
       API_V2_ENABLED: "true"
-      MIX_ENV: "prod"
-      ACCOUNT_ENABLED: "false"
+
     ports:
       - 4000:4000
     volumes:
